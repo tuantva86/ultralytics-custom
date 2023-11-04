@@ -6,7 +6,7 @@ keywords: Ultralytics, YOLOv8, predict mode, inference sources, prediction tasks
 
 # Model Prediction with Ultralytics YOLO
 
-<img width="1024" src="https://github.com/ultralytics/assets/raw/main/yolov8/banner-integrations.png" alt="Ultralytics YOLO ecosystem and integrations">
+<img width="1024" src="https://github.com/ultralytics/assets1/raw/main/yolov8/banner-integrations.png" alt="Ultralytics YOLO ecosystem and integrations">
 
 ## Introduction
 
@@ -27,7 +27,7 @@ In the world of machine learning and computer vision, the process of making sens
 
 |                                                            Manufacturing                                                            |                                                             Sports                                                              |                                                           Safety                                                            |
 |:-----------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------:|
-| ![Vehicle Spare Parts Detection](https://github.com/RizwanMunawar/ultralytics/assets/62513924/a0f802a8-0776-44cf-8f17-93974a4a28a1) | ![Football Player Detection](https://github.com/RizwanMunawar/ultralytics/assets/62513924/7d320e1f-fc57-4d7f-a691-78ee579c3442) | ![People Fall Detection](https://github.com/RizwanMunawar/ultralytics/assets/62513924/86437c4a-3227-4eee-90ef-9efb697bdb43) |
+| ![Vehicle Spare Parts Detection](https://github.com/RizwanMunawar/ultralytics/assets1/62513924/a0f802a8-0776-44cf-8f17-93974a4a28a1) | ![Football Player Detection](https://github.com/RizwanMunawar/ultralytics/assets1/62513924/7d320e1f-fc57-4d7f-a691-78ee579c3442) | ![People Fall Detection](https://github.com/RizwanMunawar/ultralytics/assets1/62513924/86437c4a-3227-4eee-90ef-9efb697bdb43) |
 |                                                    Vehicle Spare Parts Detection                                                    |                                                    Football Player Detection                                                    |                                                    People Fall Detection                                                    |
 
 ## Why Use Ultralytics YOLO for Inference?
@@ -343,7 +343,7 @@ All supported arguments:
 
 | Name            | Type           | Default                | Description                                                                    |
 |-----------------|----------------|------------------------|--------------------------------------------------------------------------------|
-| `source`        | `str`          | `'ultralytics/assets'` | source directory for images or videos                                          |
+| `source`        | `str`          | `'ultralytics/assets1'` | source directory for images or videos                                          |
 | `conf`          | `float`        | `0.25`                 | object confidence threshold for detection                                      |
 | `iou`           | `float`        | `0.7`                  | intersection over union (IoU) threshold for NMS                                |
 | `imgsz`         | `int or tuple` | `640`                  | image size as scalar or (h, w) list, i.e. (640, 480)                           |

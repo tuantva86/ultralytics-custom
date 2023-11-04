@@ -70,7 +70,7 @@ from ultralytics.nn.tasks import DetectionModel, SegmentationModel
 from ultralytics.utils import (ARM64, DEFAULT_CFG, LINUX, LOGGER, MACOS, ROOT, WINDOWS, __version__, callbacks,
                                colorstr, get_default_args, yaml_save)
 from ultralytics.utils.checks import check_imgsz, check_requirements, check_version
-from ultralytics.utils.downloads import attempt_download_asset, get_github_assets
+from ultralytics.utils.downloads import attempt_download_asset, get_github_assets1
 from ultralytics.utils.files import file_size, spaces_in_path
 from ultralytics.utils.ops import Profile
 from ultralytics.utils.torch_utils import get_latest_opset, select_device, smart_inference_mode
@@ -460,9 +460,9 @@ class Exporter:
                 f'{prefix} WARNING ⚠️ PNNX not found. Attempting to download binary file from '
                 'https://github.com/pnnx/pnnx/.\nNote PNNX Binary file must be placed in current working directory '
                 f'or in {ROOT}. See PNNX repo for full installation instructions.')
-            _, assets = get_github_assets(repo='pnnx/pnnx', retry=True)
+            _, assets1 = get_github_assets1(repo='pnnx/pnnx', retry=True)
             system = 'macos' if MACOS else 'ubuntu' if LINUX else 'windows'  # operating system
-            asset = [x for x in assets if system in x][0] if assets else \
+            asset = [x for x in assets1 if system in x][0] if assets1 else \
                 f'https://github.com/pnnx/pnnx/releases/download/20230816/pnnx-20230816-{system}.zip'  # fallback
             asset = attempt_download_asset(asset, repo='pnnx/pnnx', release='latest')
             unzip_dir = Path(asset).with_suffix('')

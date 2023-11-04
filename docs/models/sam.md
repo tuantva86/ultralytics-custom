@@ -48,10 +48,10 @@ The Segment Anything Model can be employed for a multitude of downstream tasks t
         model.info()
 
         # Run inference with bboxes prompt
-        model('ultralytics/assets/zidane.jpg', bboxes=[439, 437, 524, 709])
+        model('ultralytics/assets1/zidane.jpg', bboxes=[439, 437, 524, 709])
 
         # Run inference with points prompt
-        model('ultralytics/assets/zidane.jpg', points=[900, 370], labels=[1])
+        model('ultralytics/assets1/zidane.jpg', points=[900, 370], labels=[1])
         ```
 
 !!! example "Segment everything"
@@ -96,8 +96,8 @@ The Segment Anything Model can be employed for a multitude of downstream tasks t
         predictor = SAMPredictor(overrides=overrides)
 
         # Set image
-        predictor.set_image("ultralytics/assets/zidane.jpg")  # set with image file
-        predictor.set_image(cv2.imread("ultralytics/assets/zidane.jpg"))  # set with np.ndarray
+        predictor.set_image("ultralytics/assets1/zidane.jpg")  # set with image file
+        predictor.set_image(cv2.imread("ultralytics/assets1/zidane.jpg"))  # set with np.ndarray
         results = predictor(bboxes=[439, 437, 524, 709])
         results = predictor(points=[900, 370], labels=[1])
 
@@ -117,7 +117,7 @@ The Segment Anything Model can be employed for a multitude of downstream tasks t
         predictor = SAMPredictor(overrides=overrides)
 
         # Segment with additional args
-        results = predictor(source="ultralytics/assets/zidane.jpg", crop_n_layers=1, points_stride=64)
+        results = predictor(source="ultralytics/assets1/zidane.jpg", crop_n_layers=1, points_stride=64)
         ```
 
 - More additional args for `Segment everything` see [`Predictor/generate` Reference](../reference/models/sam/predict.md).
@@ -161,22 +161,22 @@ Tests run on a 2023 Apple M2 Macbook with 16GB of RAM. To reproduce this test:
         # Profile SAM-b
         model = SAM('sam_b.pt')
         model.info()
-        model('ultralytics/assets')
+        model('ultralytics/assets1')
 
         # Profile MobileSAM
         model = SAM('mobile_sam.pt')
         model.info()
-        model('ultralytics/assets')
+        model('ultralytics/assets1')
 
         # Profile FastSAM-s
         model = FastSAM('FastSAM-s.pt')
         model.info()
-        model('ultralytics/assets')
+        model('ultralytics/assets1')
 
         # Profile YOLOv8n-seg
         model = YOLO('yolov8n-seg.pt')
         model.info()
-        model('ultralytics/assets')
+        model('ultralytics/assets1')
         ```
 
 ## Auto-Annotation: A Quick Path to Segmentation Datasets

@@ -65,7 +65,7 @@ Check out an example of a [completed run here](https://www.comet.com/examples/co
 
 Or better yet, try it out yourself in this Colab Notebook
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1RG0WOQyxlDlo5Km8GogJpIEJlg_5lyYO?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/assets1/colab-badge.svg)](https://colab.research.google.com/drive/1RG0WOQyxlDlo5Km8GogJpIEJlg_5lyYO?usp=sharing)
 
 # Log automatically
 

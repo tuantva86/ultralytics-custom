@@ -290,7 +290,7 @@ class BasePredictor:
             if self.args.verbose:
                 LOGGER.info(f'{s}{profilers[1].dt * 1E3:.1f}ms')
 
-        # Release assets
+        # Release assets1
         if isinstance(self.vid_writer[-1], cv2.VideoWriter):
             self.vid_writer[-1].release()  # release final video writer
 

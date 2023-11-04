@@ -43,7 +43,7 @@ dataset = project.version("YOUR VERSION").download("yolov5")
 
 We have released a custom training tutorial demonstrating all of the above capabilities. You can access the code here:
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/roboflow-ai/yolov5-custom-training-tutorial/blob/main/yolov5-custom-training.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets1/colab-badge.svg)](https://colab.research.google.com/github/roboflow-ai/yolov5-custom-training-tutorial/blob/main/yolov5-custom-training.ipynb)
 
 ## Active Learning
 

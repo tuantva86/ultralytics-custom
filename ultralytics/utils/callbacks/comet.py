@@ -100,12 +100,12 @@ def _fetch_trainer_metadata(trainer):
     save = trainer.args.save
     save_period = trainer.args.save_period
     save_interval = curr_epoch % save_period == 0
-    save_assets = save and save_period > 0 and save_interval and not final_epoch
+    save_assets1 = save and save_period > 0 and save_interval and not final_epoch
 
     return dict(
         curr_epoch=curr_epoch,
         curr_step=curr_step,
-        save_assets=save_assets,
+        save_assets1=save_assets1,
         final_epoch=final_epoch,
     )
 
@@ -322,7 +322,7 @@ def on_train_epoch_end(trainer):
 
 
 def on_fit_epoch_end(trainer):
-    """Logs model assets at the end of each epoch."""
+    """Logs model assets1 at the end of each epoch."""
     experiment = comet_ml.get_global_experiment()
     if not experiment:
         return
@@ -330,7 +330,7 @@ def on_fit_epoch_end(trainer):
     metadata = _fetch_trainer_metadata(trainer)
     curr_epoch = metadata['curr_epoch']
     curr_step = metadata['curr_step']
-    save_assets = metadata['save_assets']
+    save_assets1 = metadata['save_assets1']
 
     experiment.log_metrics(trainer.metrics, step=curr_step, epoch=curr_epoch)
     experiment.log_metrics(trainer.lr, step=curr_step, epoch=curr_epoch)
@@ -338,7 +338,7 @@ def on_fit_epoch_end(trainer):
         from ultralytics.utils.torch_utils import model_info_for_loggers
         experiment.log_metrics(model_info_for_loggers(trainer), step=curr_step, epoch=curr_epoch)
 
-    if not save_assets:
+    if not save_assets1:
         return
 
     _log_model(experiment, trainer)

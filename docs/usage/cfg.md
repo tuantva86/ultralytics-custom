@@ -129,7 +129,7 @@ The prediction settings for YOLO models encompass a range of hyperparameters and
 
 | Key             | Value                  | Description                                                                    |
 |-----------------|------------------------|--------------------------------------------------------------------------------|
-| `source`        | `'ultralytics/assets'` | source directory for images or videos                                          |
+| `source`        | `'ultralytics/assets1'` | source directory for images or videos                                          |
 | `conf`          | `0.25`                 | object confidence threshold for detection                                      |
 | `iou`           | `0.7`                  | intersection over union (IoU) threshold for NMS                                |
 | `half`          | `False`                | use half precision (FP16)                                                      |

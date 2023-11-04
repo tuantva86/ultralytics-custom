@@ -5,8 +5,8 @@
 
 <div>
   <p align="center">
-  <img src="https://github.com/RizwanMunawar/ultralytics/assets/62513924/5ab3bbd7-fd12-4849-928e-5f294d6c3fcf" width="45%"/>
-    <img src="https://github.com/RizwanMunawar/ultralytics/assets/62513924/e7c1aea7-474d-4d78-8d48-b50854ffe1ca" width="45%"/>
+  <img src="https://github.com/RizwanMunawar/ultralytics/assets1/62513924/5ab3bbd7-fd12-4849-928e-5f294d6c3fcf" width="45%"/>
+    <img src="https://github.com/RizwanMunawar/ultralytics/assets1/62513924/e7c1aea7-474d-4d78-8d48-b50854ffe1ca" width="45%"/>
 &nbsp; &nbsp; &nbsp; &nbsp;
 </p>
 </div>
