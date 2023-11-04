@@ -1,0 +1,8 @@
+train: "/kaggle/input/dataset/fire-structure/train" 
+test: "/kaggle/input/dataset/fire-structure/val"
+val: "/kaggle/input/dataset/fire-structure/val"
+
+nc: 1
+
+
+names: ['Sign']
