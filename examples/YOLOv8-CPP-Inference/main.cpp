@@ -27,8 +27,8 @@ int main(int argc, char **argv)
     Inference inf(projectBasePath + "/yolov8s.onnx", cv::Size(640, 480), "classes.txt", runOnGPU);
 
     std::vector<std::string> imageNames;
-    imageNames.push_back(projectBasePath + "/ultralytics/assets1/bus.jpg");
-    imageNames.push_back(projectBasePath + "/ultralytics/assets1/zidane.jpg");
+    imageNames.push_back(projectBasePath + "/ultralytics/assets/bus.jpg");
+    imageNames.push_back(projectBasePath + "/ultralytics/assets/zidane.jpg");
 
     for (int i = 0; i < imageNames.size(); ++i)
     {

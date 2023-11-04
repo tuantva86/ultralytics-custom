@@ -7,7 +7,7 @@ from pathlib import Path
 from types import SimpleNamespace
 from typing import Dict, List, Union
 
-from ultralytics.utils import (assets1, DEFAULT_CFG, DEFAULT_CFG_DICT, DEFAULT_CFG_PATH, LOGGER, RANK, ROOT, RUNS_DIR,
+from ultralytics.utils import (assets, DEFAULT_CFG, DEFAULT_CFG_DICT, DEFAULT_CFG_PATH, LOGGER, RANK, ROOT, RUNS_DIR,
                                SETTINGS, SETTINGS_YAML, TESTS_RUNNING, IterableSimpleNamespace, __version__, checks,
                                colorstr, deprecation_warn, yaml_load, yaml_print)
 
@@ -429,7 +429,7 @@ def entrypoint(debug=''):
 
     # Mode
     if mode in ('predict', 'track') and 'source' not in overrides:
-        overrides['source'] = DEFAULT_CFG.source or assets1
+        overrides['source'] = DEFAULT_CFG.source or assets
         LOGGER.warning(f"WARNING ⚠️ 'source' is missing. Using default 'source={overrides['source']}'.")
     elif mode in ('train', 'val'):
         if 'data' not in overrides and 'resume' not in overrides:

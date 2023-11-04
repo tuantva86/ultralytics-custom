@@ -17,7 +17,7 @@ class FastSAM(Model):
         from ultralytics import FastSAM
 
         model = FastSAM('last.pt')
-        results = model.predict('ultralytics/assets1/bus.jpg')
+        results = model.predict('ultralytics/assets/bus.jpg')
         ```
     """
 

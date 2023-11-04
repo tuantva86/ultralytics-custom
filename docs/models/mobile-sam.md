@@ -4,7 +4,7 @@ description: Learn more about MobileSAM, its implementation, comparison with the
 keywords: MobileSAM, Ultralytics, SAM, mobile applications, Arxiv, GPU, API, image encoder, mask decoder, model download, testing method
 ---
 
-![MobileSAM Logo](https://github.com/ChaoningZhang/MobileSAM/blob/master/assets1/logo2.png?raw=true)
+![MobileSAM Logo](https://github.com/ChaoningZhang/MobileSAM/blob/master/assets/logo2.png?raw=true)
 
 # Mobile Segment Anything (MobileSAM)
 
@@ -45,9 +45,9 @@ Here is the comparison of the whole pipeline:
 
 The performance of MobileSAM and the original SAM are demonstrated using both a point and a box as prompts.
 
-![Image with Point as Prompt](https://raw.githubusercontent.com/ChaoningZhang/MobileSAM/master/assets1/mask_box.jpg?raw=true)
+![Image with Point as Prompt](https://raw.githubusercontent.com/ChaoningZhang/MobileSAM/master/assets/mask_box.jpg?raw=true)
 
-![Image with Box as Prompt](https://raw.githubusercontent.com/ChaoningZhang/MobileSAM/master/assets1/mask_box.jpg?raw=true)
+![Image with Box as Prompt](https://raw.githubusercontent.com/ChaoningZhang/MobileSAM/master/assets/mask_box.jpg?raw=true)
 
 With its superior performance, MobileSAM is approximately 5 times smaller and 7 times faster than the current FastSAM. More details are available at the [MobileSAM project page](https://github.com/ChaoningZhang/MobileSAM).
 
@@ -71,7 +71,7 @@ You can download the model [here](https://github.com/ChaoningZhang/MobileSAM/blo
         model = SAM('mobile_sam.pt')
 
         # Predict a segment based on a point prompt
-        model.predict('ultralytics/assets1/zidane.jpg', points=[900, 370], labels=[1])
+        model.predict('ultralytics/assets/zidane.jpg', points=[900, 370], labels=[1])
         ```
 
 ### Box Prompt
@@ -86,7 +86,7 @@ You can download the model [here](https://github.com/ChaoningZhang/MobileSAM/blo
         model = SAM('mobile_sam.pt')
 
         # Predict a segment based on a box prompt
-        model.predict('ultralytics/assets1/zidane.jpg', bboxes=[439, 437, 524, 709])
+        model.predict('ultralytics/assets/zidane.jpg', bboxes=[439, 437, 524, 709])
         ```
 
 We have implemented `MobileSAM` and `SAM` using the same API. For more usage information, please see the [SAM page](./sam.md).

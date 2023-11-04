@@ -14,9 +14,9 @@ import torch
 
 from ultralytics.utils import LOGGER, TQDM, checks, clean_url, emojis, is_online, url2file
 
-# Define Ultralytics GitHub assets1 maintained at https://github.com/ultralytics/assets1
-GITHUB_assets1_REPO = 'ultralytics/assets1'
-GITHUB_assets1_NAMES = [f'yolov8{k}{suffix}.pt' for k in 'nsmlx' for suffix in ('', '-cls', '-seg', '-pose')] + \
+# Define Ultralytics GitHub assets maintained at https://github.com/ultralytics/assets
+GITHUB_assets_REPO = 'ultralytics/assets'
+GITHUB_assets_NAMES = [f'yolov8{k}{suffix}.pt' for k in 'nsmlx' for suffix in ('', '-cls', '-seg', '-pose')] + \
                       [f'yolov5{k}{resolution}u.pt' for k in 'nsmlx' for resolution in ('', '6')] + \
                       [f'yolov3{k}u.pt' for k in ('', '-spp', '-tiny')] + \
                       [f'yolo_nas_{k}.pt' for k in 'sml'] + \
@@ -24,7 +24,7 @@ GITHUB_assets1_NAMES = [f'yolov8{k}{suffix}.pt' for k in 'nsmlx' for suffix in (
                       [f'FastSAM-{k}.pt' for k in 'sx'] + \
                       [f'rtdetr-{k}.pt' for k in 'lx'] + \
                       ['mobile_sam.pt']
-GITHUB_assets1_STEMS = [Path(k).stem for k in GITHUB_assets1_NAMES]
+GITHUB_assets_STEMS = [Path(k).stem for k in GITHUB_assets_NAMES]
 
 
 def is_url(url, check=True):
@@ -164,12 +164,12 @@ def unzip_file(file, path=None, exclude=('.DS_Store', '__MACOSX'), exist_ok=Fals
     return path  # return unzip dir
 
 
-def check_disk_space(url='https://ultralytics.com/assets1/coco128.zip', sf=1.5, hard=True):
+def check_disk_space(url='https://ultralytics.com/assets/coco128.zip', sf=1.5, hard=True):
     """
     Check if there is sufficient disk space to download and store a file.
 
     Args:
-        url (str, optional): The URL to the file. Defaults to 'https://ultralytics.com/assets1/coco128.zip'.
+        url (str, optional): The URL to the file. Defaults to 'https://ultralytics.com/assets/coco128.zip'.
         sf (float, optional): Safety factor, the multiplier for the required free space. Defaults to 2.0.
         hard (bool, optional): Whether to throw an error or not on insufficient disk space. Defaults to True.
 
@@ -267,7 +267,7 @@ def safe_download(url,
         ```python
         from ultralytics.utils.downloads import safe_download
 
-        link = "https://ultralytics.com/assets1/bus.jpg"
+        link = "https://ultralytics.com/assets/bus.jpg"
         path = safe_download(link)
         ```
     """
@@ -332,8 +332,8 @@ def safe_download(url,
         return unzip_dir
 
 
-def get_github_assets1(repo='ultralytics/assets1', version='latest', retry=False):
-    """Return GitHub repo tag and assets1 (i.e. ['yolov8n.pt', 'yolov8s.pt', ...])."""
+def get_github_assets(repo='ultralytics/assets', version='latest', retry=False):
+    """Return GitHub repo tag and assets (i.e. ['yolov8n.pt', 'yolov8s.pt', ...])."""
     if version != 'latest':
         version = f'tags/{version}'  # i.e. tags/v6.2
     url = f'https://api.github.com/repos/{repo}/releases/{version}'
@@ -341,15 +341,15 @@ def get_github_assets1(repo='ultralytics/assets1', version='latest', retry=False
     if r.status_code != 200 and r.reason != 'rate limit exceeded' and retry:  # failed and not 403 rate limit exceeded
         r = requests.get(url)  # try again
     if r.status_code != 200:
-        LOGGER.warning(f'⚠️ GitHub assets1 check failure for {url}: {r.status_code} {r.reason}')
+        LOGGER.warning(f'⚠️ GitHub assets check failure for {url}: {r.status_code} {r.reason}')
         return '', []
     data = r.json()
-    return data['tag_name'], [x['name'] for x in data['assets1']]  # tag, assets1
+    return data['tag_name'], [x['name'] for x in data['assets']]  # tag, assets
 
 
-def attempt_download_asset(file, repo='ultralytics/assets1', release='v0.0.0'):
+def attempt_download_asset(file, repo='ultralytics/assets', release='v0.0.0'):
     """
-    Attempt file download from GitHub release assets1 if not found locally.
+    Attempt file download from GitHub release assets if not found locally.
 
     release = 'latest', 'v6.2', etc.
     """
@@ -374,14 +374,14 @@ def attempt_download_asset(file, repo='ultralytics/assets1', release='v0.0.0'):
             else:
                 safe_download(url=url, file=file, min_bytes=1E5)
 
-        elif repo == GITHUB_assets1_REPO and name in GITHUB_assets1_NAMES:
+        elif repo == GITHUB_assets_REPO and name in GITHUB_assets_NAMES:
             safe_download(url=f'https://github.com/{repo}/releases/download/{release}/{name}', file=file, min_bytes=1E5)
 
         else:
-            tag, assets1 = get_github_assets1(repo, release)
-            if not assets1:
-                tag, assets1 = get_github_assets1(repo)  # latest release
-            if name in assets1:
+            tag, assets = get_github_assets(repo, release)
+            if not assets:
+                tag, assets = get_github_assets(repo)  # latest release
+            if name in assets:
                 safe_download(url=f'https://github.com/{repo}/releases/download/{tag}/{name}', file=file, min_bytes=1E5)
 
         return str(file)

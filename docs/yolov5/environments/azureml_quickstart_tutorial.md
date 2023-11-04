@@ -10,7 +10,7 @@ This guide provides a quickstart to use YOLOv5 from an AzureML compute instance.
 
 Note that this guide is a quickstart for quick trials. If you want to unlock the full power AzureML, you can find the documentation to:
 
-- [Create a data asset](https://learn.microsoft.com/azure/machine-learning/how-to-create-data-assets1)
+- [Create a data asset](https://learn.microsoft.com/azure/machine-learning/how-to-create-data-assets)
 - [Create an AzureML job](https://learn.microsoft.com/azure/machine-learning/how-to-train-model)
 - [Register a model](https://learn.microsoft.com/azure/machine-learning/how-to-manage-models)
 
@@ -22,13 +22,13 @@ You need an [AzureML workspace](https://learn.microsoft.com/azure/machine-learni
 
 From your AzureML workspace, select Compute > Compute instances > New, select the instance with the resources you need.
 
-<img width="1741" alt="create-compute-arrow" src="https://github.com/ouphi/ultralytics/assets1/17216799/3e92fcc0-a08e-41a4-af81-d289cfe3b8f2">
+<img width="1741" alt="create-compute-arrow" src="https://github.com/ouphi/ultralytics/assets/17216799/3e92fcc0-a08e-41a4-af81-d289cfe3b8f2">
 
 ## Open a Terminal
 
 Now from the Notebooks view, open a Terminal and select your compute.
 
-![open-terminal-arrow](https://github.com/ouphi/ultralytics/assets1/17216799/c4697143-7234-4a04-89ea-9084ed9c6312)
+![open-terminal-arrow](https://github.com/ouphi/ultralytics/assets/17216799/c4697143-7234-4a04-89ea-9084ed9c6312)
 
 ## Setup and run YOLOv5
 

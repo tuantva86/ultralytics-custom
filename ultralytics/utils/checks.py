@@ -21,7 +21,7 @@ import requests
 import torch
 from matplotlib import font_manager
 
-from ultralytics.utils import (assets1, AUTOINSTALL, LINUX, LOGGER, ONLINE, ROOT, USER_CONFIG_DIR, SimpleNamespace,
+from ultralytics.utils import (assets, AUTOINSTALL, LINUX, LOGGER, ONLINE, ROOT, USER_CONFIG_DIR, SimpleNamespace,
                                ThreadingLocked, TryExcept, clean_url, colorstr, downloads, emojis, is_colab, is_docker,
                                is_jupyter, is_kaggle, is_online, is_pip_package, url2file)
 
@@ -279,7 +279,7 @@ def check_font(font='Arial.ttf'):
         return matches[0]
 
     # Download to USER_CONFIG_DIR if missing
-    url = f'https://ultralytics.com/assets1/{name}'
+    url = f'https://ultralytics.com/assets/{name}'
     if downloads.is_url(url):
         downloads.safe_download(url=url, file=file)
         return file
@@ -428,7 +428,7 @@ def check_yolov5u_filename(file: str, verbose: bool = True):
 
 def check_model_file_from_stem(model='yolov8n'):
     """Return a model filename from a valid model stem."""
-    if model and not Path(model).suffix and Path(model).stem in downloads.GITHUB_assets1_STEMS:
+    if model and not Path(model).suffix and Path(model).stem in downloads.GITHUB_assets_STEMS:
         return Path(model).with_suffix('.pt')  # add suffix, i.e. yolov8n -> yolov8n.pt
     else:
         return model
@@ -568,7 +568,7 @@ def check_amp(model):
         del m
         return a.shape == b.shape and torch.allclose(a, b.float(), atol=0.5)  # close to 0.5 absolute tolerance
 
-    im = assets1 / 'bus.jpg'  # image to check
+    im = assets / 'bus.jpg'  # image to check
     prefix = colorstr('AMP: ')
     LOGGER.info(f'{prefix}running Automatic Mixed Precision (AMP) checks with YOLOv8n...')
     warning_msg = "Setting 'amp=True'. If you experience zero-mAP or NaN losses you can disable AMP with amp=False."

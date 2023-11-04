@@ -18,10 +18,10 @@ class RTDETRPredictor(BasePredictor):
 
     Example:
         ```python
-        from ultralytics.utils import assets1
+        from ultralytics.utils import assets
         from ultralytics.models.rtdetr import RTDETRPredictor
 
-        args = dict(model='rtdetr-l.pt', source=assets1)
+        args = dict(model='rtdetr-l.pt', source=assets)
         predictor = RTDETRPredictor(overrides=args)
         predictor.predict_cli()
         ```

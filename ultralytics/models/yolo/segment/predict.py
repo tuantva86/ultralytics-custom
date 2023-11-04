@@ -11,10 +11,10 @@ class SegmentationPredictor(DetectionPredictor):
 
     Example:
         ```python
-        from ultralytics.utils import assets1
+        from ultralytics.utils import assets
         from ultralytics.models.yolo.segment import SegmentationPredictor
 
-        args = dict(model='yolov8n-seg.pt', source=assets1)
+        args = dict(model='yolov8n-seg.pt', source=assets)
         predictor = SegmentationPredictor(overrides=args)
         predictor.predict_cli()
         ```

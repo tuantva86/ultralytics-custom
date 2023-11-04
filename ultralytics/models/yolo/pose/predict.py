@@ -11,10 +11,10 @@ class PosePredictor(DetectionPredictor):
 
     Example:
         ```python
-        from ultralytics.utils import assets1
+        from ultralytics.utils import assets
         from ultralytics.models.yolo.pose import PosePredictor
 
-        args = dict(model='yolov8n-pose.pt', source=assets1)
+        args = dict(model='yolov8n-pose.pt', source=assets)
         predictor = PosePredictor(overrides=args)
         predictor.predict_cli()
         ```

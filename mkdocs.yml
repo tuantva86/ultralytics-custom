@@ -13,8 +13,8 @@ theme:
   name: material
   language: en
   custom_dir: docs/overrides
-  logo: https://github.com/ultralytics/assets1/raw/main/logo/Ultralytics_Logotype_Reverse.svg
-  favicon: assets1/favicon.ico
+  logo: https://github.com/ultralytics/assets/raw/main/logo/Ultralytics_Logotype_Reverse.svg
+  favicon: assets/favicon.ico
   icon:
     repo: fontawesome/brands/github
   # Fonts disabled for faster page load times
@@ -423,7 +423,7 @@ plugins:
       add_desc: False
       add_image: True
       add_share_buttons: True
-      default_image: https://github.com/ultralytics/ultralytics/assets1/26833433/6d09221c-c52a-4234-9a5d-b862e93c6529
+      default_image: https://github.com/ultralytics/ultralytics/assets/26833433/6d09221c-c52a-4234-9a5d-b862e93c6529
   - redirects:
       redirect_maps:
         callbacks.md: usage/callbacks.md

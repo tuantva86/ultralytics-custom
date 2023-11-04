@@ -5,7 +5,7 @@ import numpy as np
 import onnxruntime as ort
 import torch
 
-from ultralytics.utils import assets1, yaml_load
+from ultralytics.utils import assets, yaml_load
 from ultralytics.utils.checks import check_requirements, check_yaml
 
 
@@ -206,7 +206,7 @@ if __name__ == '__main__':
     # Create an argument parser to handle command-line arguments
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, default='yolov8n.onnx', help='Input your ONNX model.')
-    parser.add_argument('--img', type=str, default=str(assets1 / 'bus.jpg'), help='Path to input image.')
+    parser.add_argument('--img', type=str, default=str(assets / 'bus.jpg'), help='Path to input image.')
     parser.add_argument('--conf-thres', type=float, default=0.5, help='Confidence threshold')
     parser.add_argument('--iou-thres', type=float, default=0.5, help='NMS IoU threshold')
     args = parser.parse_args()

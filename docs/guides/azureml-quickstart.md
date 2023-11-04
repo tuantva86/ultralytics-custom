@@ -33,7 +33,7 @@ Before you can get started, make sure you have access to an AzureML workspace. I
 From your AzureML workspace, select Compute > Compute instances > New, select the instance with the resources you need.
 
 <p align="center">
-  <img width="1280" src="https://github.com/ouphi/ultralytics/assets1/17216799/3e92fcc0-a08e-41a4-af81-d289cfe3b8f2" alt="Create Azure Compute Instance">
+  <img width="1280" src="https://github.com/ouphi/ultralytics/assets/17216799/3e92fcc0-a08e-41a4-af81-d289cfe3b8f2" alt="Create Azure Compute Instance">
 </p>
 
 ## Quickstart from Terminal
@@ -41,7 +41,7 @@ From your AzureML workspace, select Compute > Compute instances > New, select th
 Start your compute and open a Terminal:
 
 <p align="center">
-  <img width="480" src="https://github.com/ouphi/ultralytics/assets1/17216799/635152f1-f4a3-4261-b111-d416cb5ef357" alt="Open Terminal">
+  <img width="480" src="https://github.com/ouphi/ultralytics/assets/17216799/635152f1-f4a3-4261-b111-d416cb5ef357" alt="Open Terminal">
 </p>
 
 ### Create virtualenv
@@ -86,7 +86,7 @@ You can find more [instructions to use the Ultralytics CLI here](https://docs.ul
 Open the compute Terminal.
 
 <p align="center">
-  <img width="480" src="https://github.com/ouphi/ultralytics/assets1/17216799/635152f1-f4a3-4261-b111-d416cb5ef357" alt="Open Terminal">
+  <img width="480" src="https://github.com/ouphi/ultralytics/assets/17216799/635152f1-f4a3-4261-b111-d416cb5ef357" alt="Open Terminal">
 </p>
 
 From your compute terminal, you need to create a new ipykernel that will be used by your notebook to manage your dependencies:
@@ -145,7 +145,7 @@ By following these steps, you should be able to get YOLOv8 running quickly on Az
 
 This guide serves as an introduction to get you up and running with YOLOv8 on AzureML. However, it only scratches the surface of what AzureML can offer. To delve deeper and unlock the full potential of AzureML for your machine learning projects, consider exploring the following resources:
 
-- [Create a Data Asset](https://learn.microsoft.com/azure/machine-learning/how-to-create-data-assets1): Learn how to set up and manage your data assets1 effectively within the AzureML environment.
+- [Create a Data Asset](https://learn.microsoft.com/azure/machine-learning/how-to-create-data-assets): Learn how to set up and manage your data assets effectively within the AzureML environment.
 - [Initiate an AzureML Job](https://learn.microsoft.com/azure/machine-learning/how-to-train-model): Get a comprehensive understanding of how to kickstart your machine learning training jobs on AzureML.
 - [Register a Model](https://learn.microsoft.com/azure/machine-learning/how-to-manage-models): Familiarize yourself with model management practices including registration, versioning, and deployment.
 - [Train YOLOv8 with AzureML Python SDK](https://medium.com/@ouphi/how-to-train-the-yolov8-model-with-azure-machine-learning-python-sdk-8268696be8ba): Explore a step-by-step guide on using the AzureML Python SDK to train your YOLOv8 models.
