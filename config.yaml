@@ -1,6 +1,6 @@
-train: "/kaggle/input/dataset/fire-structure/train" 
-test: "/kaggle/input/dataset/fire-structure/val"
-val: "/kaggle/input/dataset/fire-structure/val"
+train: "/kaggle/input/kvarsir/data/train" 
+test: "/kaggle/input/kvarsir/data/val"
+val: "/kaggle/input/kvarsir/data/test"
 
 nc: 1
 
