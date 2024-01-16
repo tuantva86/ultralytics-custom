@@ -80,7 +80,7 @@ class BboxLoss(nn.Module):
         diou = bbox_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False,CIoU=False, DIoU = True)
         # diou_loss = 1 - diou
         # BCE_EXP = torch.exp(1-iou)
-        diou_loss = diou
+        diou_loss = 1 - diou
         BCE_EXP = torch.exp(iou)
         focal = alpha * BCE_EXP**gamma * torch.mean(diou_loss)
         #print("check", torch.le(diou_loss, focal) )
