@@ -1,6 +1,6 @@
-train: "/kaggle/input/polyp-dataset/data-convert/CVC-300/data/train" 
-test: "/kaggle/input/polyp-dataset/data-convert/CVC-300/data/val"
-val: "/kaggle/input/polyp-dataset/data-convert/CVC-300/data/test"
+train: "/kaggle/input/cvc-300/data/train" 
+test: "/kaggle/input/cvc-300/data/val"
+val: "/kaggle/input/cvc-300/data/test"
 
 nc: 1
 
