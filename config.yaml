@@ -1,6 +1,6 @@
-train: "/kaggle/input/cvc-300/data/train" 
-test: "/kaggle/input/cvc-300/data/val"
-val: "/kaggle/input/cvc-300/data/test"
+train: "/kaggle/input/cvc-colondb/data/test" 
+test: "/kaggle/input/cvc-colondb/data/val"
+val: "/kaggle/input/cvc-colondb/data/test"
 
 nc: 1
 
