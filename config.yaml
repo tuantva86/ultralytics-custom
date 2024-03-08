@@ -1,6 +1,6 @@
-train: "/kaggle/input/kvarsir/data/train" 
-test: "/kaggle/input/kvarsir/data/test"
-val: "/kaggle/input/kvarsir/data/val"
+train: "/kaggle/input/cvc-300/data/train" 
+test: "/kaggle/input/cvc-300/data/test"
+val: "/kaggle/input/cvc-300/data/val"
 
 nc: 1
 
