@@ -69,28 +69,14 @@ class BboxLoss(nn.Module):
 
     def forward(self, pred_dist, pred_bboxes, anchor_points, target_bboxes, target_scores, target_scores_sum, fg_mask):
         """IoU loss."""
-        gamma = 2
-        alpha = 0.35
         weight = target_scores.sum(-1)[fg_mask].unsqueeze(-1)
         #IoU
         iou = bbox_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, CIoU=False, DIoU = False)
         #CIoU
         #iou = bbox_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False, CIoU=True, DIoU = False)
         #DIoU
-        iou = bbox_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False,CIoU=False, DIoU = True)
-        # diou_loss = 1 - diou
-        # BCE_EXP = torch.exp(1-iou)
-        diou_loss = iou
-        BCE_EXP = torch.exp(1 - iou)
-        focal = alpha * BCE_EXP**gamma * torch.mean(diou_loss)
-        #print("check", torch.le(diou_loss, focal) )
-        regression_loss = torch.where(
-                        torch.le(diou_loss, focal),
-                        focal,
-                        diou_loss
-                    )
-
-        loss_iou = ((1.0 - regression_loss) * weight).sum() / target_scores_sum
+        #iou = bbox_iou(pred_bboxes[fg_mask], target_bboxes[fg_mask], xywh=False,CIoU=False, DIoU = True)
+        loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
 
         # DFL loss
         if self.use_dfl:
