@@ -1,6 +1,6 @@
-train: "/kaggle/input/cvc-300/data/train" 
-test: "/kaggle/input/cvc-300/data/test"
-val: "/kaggle/input/cvc-300/data/val"
+train: "/kaggle/input/polyp-mixed/Polyp-Mixed/data/train" 
+test: "/kaggle/input/polyp-mixed/Polyp-Mixed/data/test"
+val: "/kaggle/input/polyp-mixed/Polyp-Mixed/data/val"
 
 nc: 1
 
